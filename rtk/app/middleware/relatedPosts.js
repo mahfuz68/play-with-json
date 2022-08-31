@@ -4,7 +4,7 @@ const fetchRelatedPostThunk = require("../../features/relatedPosts/thunk/fetchRe
 const relatedPostsMiddleware = (store) => (next) => (action) => {
   if (action.type === fetchPostThunk.fulfilled.type) {
     const { title } = action.payload;
-
+    console.log(title);
     store.dispatch(fetchRelatedPostThunk(title));
     return next(action);
   }
