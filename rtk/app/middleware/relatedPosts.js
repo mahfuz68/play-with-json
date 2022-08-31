@@ -1,7 +1,8 @@
+const fetchPostThunk = require("../../features/post/thunk/fetchPostThunk");
 const fetchRelatedPostThunk = require("../../features/relatedPosts/thunk/fetchRelatedPostThunk");
 
 const relatedPostsMiddleware = (store) => (next) => (action) => {
-  if (action.type === "post/fetchPost/fulfilled") {
+  if (action.type === fetchPostThunk.fulfilled.type) {
     const { title } = action.payload;
 
     store.dispatch(fetchRelatedPostThunk(title));

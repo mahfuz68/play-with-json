@@ -30,7 +30,7 @@ const postSlice = createSlice({
         return {
           loading: false,
           post: {},
-          error: action.payload.error.message,
+          error: action.error.message,
         };
       });
   },
