@@ -17,6 +17,7 @@ const postSlice = createSlice({
       return {
         loading: true,
         error: "",
+        post: {},
       };
     }),
       builder.addCase(fatchPostThunk.fulfilled, (state, action) => {
